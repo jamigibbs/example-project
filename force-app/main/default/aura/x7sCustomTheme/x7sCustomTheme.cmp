@@ -1,0 +1,125 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Custom Theme Layout">
+
+    <!-- Salesforce Customer Service template content types-->
+    <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+
+    <!-- Custom content types -->
+    <aura:attribute name="utilityBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="footer" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="subFooter" type="Aura.Component[]" required="false"/>
+
+    <!-- Public Properties -->
+    <aura:attribute name="showSearch" type="Boolean" default="false" required="false" />
+    <aura:attribute name="showNotifications" type="Boolean" default="false" required="false" />
+    <aura:attribute name="fullWidth" type="Boolean" default="false" />
+
+    <!-- Private Properties -->
+    <aura:attribute name="bodyClass" type="String" default="slds-container_center slds-container_x-large" access="private"/>
+
+    <!-- init handler -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="cViewPanel siteforceServiceBody">
+        <a href="javascript:void(0);" class="forceSkipLink">Skip to Navigation</a>
+        <a href="javascript:void(0);" class="forceSkipLink">Skip to Main Content</a>
+
+        <!-- UTILITY NAVIGATION -->
+        <div class="cUtilityNavBarCon">
+            <div class="slds-container_center slds-container_x-large">
+                <div class="slds-col_padded">
+                    {!v.utilityBar}
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER -->
+        <div class="cHeaderCon">
+            <div class="cHeaderPanel">
+                <div class="slds-container_center slds-container_x-large">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-end slds-p-bottom_medium slds-col_padded">
+
+                        <!-- BRANDING -->
+                        <div class="cBrandingProfile slds-m-right_small slds-show_medium">
+                            <div class="slds-grid slds-grid_vertical-align-center">
+                                <a class="cBrandingLogo slds-m-right_small" href="javascript:void(0);" title="Company" onclick="{!c.gotoUrl}">
+                                    <span class="assistiveText">Company</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--NAVBAR-->
+                        <div class="cNavBarCon" tabindex="-1">
+                            {!v.navBar}
+                        </div>
+
+                        <!-- MOBILE BRANDING -->
+                        <div class="cBrandingProfile slds-m-right_small slds-hide_medium">
+                            <div class="slds-grid slds-grid_vertical-align-center">
+                                <a class="cBrandingLogo slds-m-right_small" href="javascript:void(0);" title="Company">
+                                    <span class="assistiveText">Company</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="slds-col_bump-left"></div>
+
+                        <!-- NOTIFICATIONS -->
+                        <aura:if isTrue="{!v.showNotifications}">
+                            <div class="cNotifications slds-p-horizontal_small">
+                                <forceCommunity:notifications/>
+                            </div>
+                        </aura:if>
+
+                        <!--PROFILE-->
+                        <div class="cProfileCon">
+                            {!v.profileMenu}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search container -->
+            <aura:if isTrue="{!v.showSearch}">
+                <div class="cSearchCon" id="search-container">
+                    <div class="cSearchPublisher slds-p-vertical_large">
+                        {!v.search}
+                    </div>
+                </div>
+            </aura:if>
+
+        </div>
+
+        <!-- BODY -->
+        <div class="cCenterPanel">
+            <div class="{!v.bodyClass}">
+                {!v.body}
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="cFooterPanel" id="footer">
+            <div class="cFooterCon">
+                <div class="slds-container_center slds-container_x-large">
+                    <div class="slds-col_padded comm-layout-column">
+                        {!v.footer}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUB FOOTER -->
+        <div class="cSubFooterPanel" id="subfooter">
+            <div class="cSubFooterCon">
+                <div class="slds-container_center slds-container_x-large">
+                    <div class="slds-col_padded comm-layout-column">
+                        {!v.subFooter}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aura:component>

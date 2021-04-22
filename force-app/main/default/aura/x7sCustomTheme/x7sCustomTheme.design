@@ -1,0 +1,5 @@
+<design:component label="Custom Theme">
+    <design:attribute name="fullWidth" label="Full-width body" description="Check to make the page body (content) full-width of browser window." />
+    <design:attribute name="showSearch" label="Show search" description="Show community search" />
+    <design:attribute name="showNotifications" label="Show notifications" />
+</design:component>
