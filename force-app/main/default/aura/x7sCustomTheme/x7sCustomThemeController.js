@@ -1,10 +1,10 @@
-/**
- * Created by brianpoulsen on 11/25/19.
- */
-
 ({
     doInit: function(component, event, helper) {
+        const logo = $A.get('$Resource.htlf_logo');
+        component.set('v.logo', logo);
+
         helper.getBodyClass(component);
+        helper.getLogoImage(component);
     },
 
     gotoUrl: function() {

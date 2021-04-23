@@ -7,7 +7,7 @@
  */
 .THIS .cBrandingLogo
 {
-    background-image: t('url(' + brandLogoImage + ')');
+    /* background-image: t('url(' + brandLogoImage + ')'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 50%;

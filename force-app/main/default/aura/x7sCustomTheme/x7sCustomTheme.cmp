@@ -15,11 +15,20 @@
     <aura:attribute name="showNotifications" type="Boolean" default="false" required="false" />
     <aura:attribute name="fullWidth" type="Boolean" default="false" />
 
+    <!-- Branding Properties -->
+    <aura:attribute name="logo" type="String" required="false" />
+
     <!-- Private Properties -->
     <aura:attribute name="bodyClass" type="String" default="slds-container_center slds-container_x-large" access="private"/>
 
     <!-- init handler -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:html tag="style">
+        .cBrandingLogo {
+            background-image: url({!v.logo});
+        }
+    </aura:html>
 
     <div class="cViewPanel siteforceServiceBody">
         <a href="javascript:void(0);" class="forceSkipLink">Skip to Navigation</a>
