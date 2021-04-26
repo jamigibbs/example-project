@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2021. 7Summits Inc. All rights reserved.
+ *
+ * COMPILED FILE DO NOT DIRECTLY EDIT
+ */
+.THIS.x7s-layout_padded,
+.THIS .x7s-layout_padded {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.THIS.x7s-layout_full.siteforceContentArea,
+.THIS .x7s-layout_full.siteforceContentArea {
+  max-width: 100%;
+}

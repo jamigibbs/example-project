@@ -1,0 +1,62 @@
+// ===================
+// Carat icons
+// ===================
+.caratIcon() {
+  &:after {
+    position: absolute;
+    top: 0;
+
+    width: 0;
+    height: 0;
+
+    content: "";
+
+    border: 5px solid transparent;
+  }
+}
+.caratDown(@color) {
+  width: 10px;
+
+  .caratIcon();
+  &:after {
+    margin-top: 7px;
+
+    border-top: 5px solid @color;
+  }
+}
+
+.caratUp(@color) {
+  width: 10px;
+
+  .caratIcon();
+  &:after {
+    left: 50%;
+
+    margin-top: -10px;
+    margin-left: -5px;
+
+    border-bottom: 5px solid @color;
+  }
+}
+
+.caratLeft(@color) {
+  width: 10px;
+
+  .caratIcon();
+  &:after {
+    margin-top: 7px;
+
+    border-right: 5px solid @color;
+  }
+}
+
+.caratRight(@color) {
+  width: 10px;
+
+  .caratIcon();
+  &:after {
+    margin-top: 7px;
+
+    border-left: 5px solid @color;
+  }
+}

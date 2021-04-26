@@ -1,0 +1,266 @@
+@import (inline) url("branding-tokens.css");
+@import "../../_base/components-common";
+
+.THIS {
+  // add 1160px max width on content containers
+  .slds-container_x-large {
+    max-width: 74rem; // 1160px + 24px padding = 1184px
+  }
+
+  // increase padding on all main containers
+  // prevents horizontal-scrolling on mobile when pull-padding a lightning-layout
+  // include deprecated '.slds-col--padded' class because SF is still using this in some page layouts for some reason
+  .slds-col_padded,
+  .slds-col--padded {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  // hidden skip link for screen readers
+  .forceSkipLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 6px 12px;
+    background: transparent;
+  }
+
+  // logo
+  .cBrandingProfile {
+    min-width: 150px; // change this width to match comp
+  }
+
+  .cBrandingLogo {
+    position: relative;
+    display: block;
+    outline: 0;
+    width: 100%;
+    height: 50px; // change this height to match comp
+  }
+
+  .cUtilityNavBarCon,
+  .cHeaderCon {
+    background-color: @brandColor;
+  }
+
+  // User Profile Menu
+  .selfServiceUserProfileMenu .selfServiceProfileMenuTrigger {
+    text-align: left;
+
+    a:hover,
+    a:focus,
+    a:active {
+      color: @inverseTextColor; // retain inverse color for arrow on profile menu hover, focus, active states
+    }
+  }
+
+  // cNotifications
+  .cNotifications {
+    .forceIcon.slds-button__icon {
+      .slds-icon {
+        fill: @white;
+      }
+    }
+    // fix notification bell bug that causes horizontal scrolling
+    .uiTooltip .tooltip-invisible {
+      display: none;
+    }
+  }
+
+  // Search
+  .cSearchPublisher {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+  }
+
+  // cFooterPanel - gray box
+  .cFooterPanel {
+    background-color: @borderColor;
+  }
+
+  // cSubFooterPanel
+  .cSubFooterPanel {
+    background-color: @brandColor;
+  }
+
+  // TYPOGRAPHY
+  .siteforceContentArea {
+    a,
+    .forceCommunityRichText a {
+      color: @altColor;
+    }
+
+    h1:not([class*="slds-page-header__title"]) {
+      font-size: 3.1rem;
+      color: @gray;
+      line-height: 1.2;
+      font-weight: normal;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: @altColor;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 2.125rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 1.625rem;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+    }
+  }
+
+  // AURA COMPONENT OVERRIDES (Expedition Pack v1)
+  // =============================================
+
+  //.cPeak_Tile {
+  //    .peak-tile__description {
+  //        font-size: 1rem;
+  //    }
+  //}
+
+  // Salesforce Component Overrides
+  // ==============================
+
+  // global navigation
+  .forceCommunityGlobalNavigation .slds-list__item a,
+  .forceCommunityGlobalNavigation .slds-list__item button {
+    text-transform: none;
+    font-size: 1rem;
+  }
+  .forceCommunityGlobalNavigation
+    .slds-list_horizontal
+    > .slds-list__item
+    > .comm-navigation__item
+    > a:hover,
+  .forceCommunityGlobalNavigation
+    .slds-list_horizontal
+    > .slds-list__item
+    > .comm-navigation__item
+    > a.slds-is-active:not([data-type="home"]),
+  .forceCommunityGlobalNavigation
+    .slds-list_horizontal
+    > .slds-list__item
+    > .comm-navigation__item
+    > button:hover,
+  .forceCommunityGlobalNavigation
+    .slds-list_horizontal
+    > .slds-list__item
+    > .comm-navigation__item
+    > button.slds-is-active:not([data-type="home"]) {
+    background-color: transparent;
+  }
+
+  // Tabs
+  .uiTabset--base {
+    .tabs__item {
+      font-size: 1.125rem;
+    }
+  }
+  .uiTabset--default {
+    .tabs__nav {
+      border-bottom: 4px solid @borderColor;
+    }
+    .tabs__item {
+      text-transform: none;
+      letter-spacing: 0;
+      position: relative;
+      bottom: -4px; // align active border with tab border
+    }
+    .tabs__item:not(.active) > a,
+    .uiTabOverflowMenuItem a {
+      color: @gray;
+      border-bottom: 4px solid transparent;
+    }
+    .tabs__item > a,
+    .uiTabOverflowMenuItem a {
+      border-bottom: 4px solid transparent;
+      &:hover {
+        text-decoration: none;
+        color: @brandColor;
+      }
+    }
+    .tabs__item.active > a {
+      border-color: @brandColor;
+    }
+  }
+  .forceCommunityTabset {
+    .uiTabBar {
+      .uiTabItem {
+        .tabHeader {
+          text-transform: none;
+        }
+      }
+    }
+  }
+
+  // CUSTOM LIGHTNING COMPONENT STYLES
+  // Listed in alphabetical order
+  // =================================
+
+  // Lightning-Layout (Flexbox) fix for IE
+  // =====================================
+  //Target IE10+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    lightning-layout > slot,
+    lightning-layout-item > slot {
+      display: inherit;
+      width: 100%;
+      flex-wrap: inherit;
+    }
+  }
+  //Target MS Edge 12-14 (-ms-accelerator: true) and MS Edge 15+ (-ms-ime-align: auto)
+  @supports (-ms-accelerator: true) or (-ms-ime-align: auto) {
+    lightning-layout > slot,
+    lightning-layout-item > slot {
+      display: inherit;
+      width: 100%;
+      flex-wrap: inherit;
+    }
+  }
+
+  // DESKTOP MEDIA QUERIES
+  // =====================
+  @media only screen and (min-width: 64.0625em) {
+    .selfServiceUserProfileMenu {
+      .profileName {
+        display: none; // remove profile name; only show avatar
+      }
+    }
+  }
+  @media only screen and (min-aspect-ratio: 4/3) and (min-width: 48em),
+    only screen and (min-width: 64.0625em) {
+    .selfServiceProfileMenuTrigger .trigger-link {
+      padding: 14px 0 14px 10px; // remove the right-padding on the profile menu so it right-aligns with other content containers
+    }
+  }
+  @media only screen and (min-width: 48em) {
+    .cBrandingProfile {
+      width: 15%;
+    }
+    .cNavBarCon {
+      width: 70%;
+    }
+    .cNotifications {
+      // width: 5%;
+    }
+    .cProfileCon {
+      // width: 10%;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!--
+  ~ Copyright (c) 2021. 7Summits Inc. All rights reserved.
+  -->
+
+<aura:component implements="forceCommunity:layout" description="7S Full Width" access="global">
+    <aura:attribute name="content" type="Aura.Component[]" required="false" />
+    <aura:attribute name="headerContent" type="Aura.Component[]" required="false" />
+
+    <section class="x7s-layout__main">
+      <div class="slds-container_x-large slds-container_center">
+          <lightning:layout multipleRows="true">
+              <lightning:layoutItem size="12"
+                                    mediumDeviceSize="12"
+                                    padding="horizontal-x-small"
+                                    class="slds-p-vertical_large">
+                  {!v.headerContent}
+              </lightning:layoutItem>
+          </lightning:layout>
+      </div>
+    </section>
+
+    <section class="x7s-layout__main">
+        <div class="slds-container_x-large slds-container_center">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12"
+                                      mediumDeviceSize="12"
+                                      padding="horizontal-x-small"
+                                      class="content-bg-with-top-border slds-p-vertical_large">
+                    {!v.content}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </section>
+</aura:component>

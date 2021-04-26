@@ -1,0 +1,42 @@
+@navLink: {
+  a {
+    &:link,
+    &:visited {
+      font-size: @smallSize;
+      font-weight: bold;
+      // hoses nav links position: relative;
+
+      letter-spacing: 1px;
+      text-transform: none;
+
+      color: @color;
+
+      .slds-icon--xx-small {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+
+      @transparentBorderBottom();
+      &:after {
+        right: 5px;
+        left: 5px;
+
+        transition: all 0.5s;
+
+        background: transparent;
+      }
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+
+      color: @hover;
+      background: none;
+      // match underline of search
+      &:after {
+        background: @darkGray;
+      }
+    }
+  }
+};

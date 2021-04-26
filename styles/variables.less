@@ -1,0 +1,94 @@
+// ===================
+// Variables
+// ===================
+
+// Core Colors
+@white: #fff;
+@black: #000;
+@darkGray: #333;
+
+// Color assignments
+@color: token(linkColor);
+
+@hover: token(linkHoverColor);
+
+@altColor: token(labelColor);
+@altHover: token(labelColor);
+
+@bgColor: token(brandColor);
+@tertiaryColor: token(brandColor);
+@tertiaryHover: token(brandHoverColor);
+
+@textColor: token(textColor);
+@titleColor: token(labelColor);
+@linkColor: token(linkColor);
+@inverseTextColor: token(inverseTextColor);
+@lightGray: #eee;
+@gray: #606060;
+@darkGray: #333;
+@borderColor: token(borderColor);
+
+// Fonts (font assignments handled in typography.less)
+@font: token(fontFamily);
+@titleFont: Montserrat, sans-serif; // Can't find this design token listed anywhere!
+@altFont: "Source Sans Pro", Lucida Grande, sans-serif;
+@fontSize: token(fontSizeMedium);
+
+@h1Size: 2rem; // token(fontSizeXxLarge);
+@h2Size: 1.5rem; //;  token(fontSizeXLarge);
+@h3Size: 1.25rem; //token(fontSizeLarge);
+@h4Size: 1.125rem; //token(fontSizeMediumA);
+@smallSize: 0.875rem; //token(fontSizeSmall);
+@xsmallSize: 0.625rem; //token(fontSizeXSmall);
+// @lineHeight: token(lineHeightText);
+
+@textTransform: token(transformText);
+@titleLineHeight: token(lineHeightHeading);
+
+// Layouts - in SF it's just sm,md,lg, no xs. Use min queries (mobile first)
+@screen-sm-min: 30em;
+@screen-sm-max: 47.9375em;
+@screen-md-min: 48em;
+@screen-lg-min: 64.0625em;
+@napili-max: 1140px;
+
+// Other
+@borderRadius: token(borderRadiusMedium);
+@paddingxSmall: token(spacingXSmall);
+@paddingSmall: token(spacingSmall);
+@paddingLarge: token(spacingLarge);
+@paddingXLarge: token(spacingXLarge);
+@gutter: @paddingxSmall;
+
+// Animations & transitions
+@animationDuration: 0.25s;
+
+@easeinquint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@easeoutquint: cubic-bezier(0.23, 1, 0.32, 1);
+@easeinoutquint: cubic-bezier(0.86, 0, 0.07, 1);
+
+// CUSTOM COMMUNITY THEME VARIABLES
+// ================================
+
+// Community Builder Branding Editor Colors
+// https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/tokens_standard_communities.htm
+@color: t(textColor); // Text Color: token(colorTextDefault); #808285 gray
+@colorLWC: var(
+  --lwc-colorTextDefault
+); // Text Color: token(colorTextDefault); #808285 gray
+@altColor: t(
+  labelColor
+); // Detail Text Color: token(colorTextLabel); #393839 gray
+@brandColor: t(brandColor); // Action Color: token(colorBrand); #1e51bf blue
+@brandColorLWC: var(--lwc-colorBrand);
+@linkColor: t(linkColor); // Link Color: token(colorTextLink);
+@linkColorLWC: var(--lwc-colorTextLink);
+@inverseTextColor: t(
+  inverseTextColor
+); // Overlay Text Color: token(colorTextInverse); #FFF White
+@borderColor: t(borderColor); // Border Color: token(colorBorder); #e2e3e4 gray
+@borderColorLWC: var(
+  --lwc-colorBorder
+); // Border Color: token(colorBorder); #e2e3e4 gray
+
+// Other Brand Colors

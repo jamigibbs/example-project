@@ -1,13 +1,11 @@
-/**
- * 7Summits_Lightning_Component_Recipes - Front-end assets used for the 7Summits Lightning Component Recipes
- * @version 1.0.0
- * @author 7Summits
+/*
+ * Copyright (c) 2021. 7Summits All rights reserved.
  *
  * COMPILED FILE DO NOT DIRECTLY EDIT
  */
 .THIS .cBrandingLogo
 {
-    /* background-image: t('url(' + brandLogoImage + ')'); */
+    background-image: t('url(' + brandLogoImage + ')');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 50%;
@@ -75,7 +73,7 @@
 .THIS .siteforceContentArea .forceCommunityRichText a {
   color: t(labelColor);
 }
-.THIS .siteforceContentArea h1:not([class*='slds-page-header__title']) {
+.THIS .siteforceContentArea h1:not([class*="slds-page-header__title"]) {
   font-size: 3.1rem;
   color: #606060;
   line-height: 1.2;
@@ -104,9 +102,9 @@
   font-size: 1rem;
 }
 .THIS .forceCommunityGlobalNavigation .slds-list_horizontal > .slds-list__item > .comm-navigation__item > a:hover,
-.THIS .forceCommunityGlobalNavigation .slds-list_horizontal > .slds-list__item > .comm-navigation__item > a.slds-is-active:not([data-type='home']),
+.THIS .forceCommunityGlobalNavigation .slds-list_horizontal > .slds-list__item > .comm-navigation__item > a.slds-is-active:not([data-type="home"]),
 .THIS .forceCommunityGlobalNavigation .slds-list_horizontal > .slds-list__item > .comm-navigation__item > button:hover,
-.THIS .forceCommunityGlobalNavigation .slds-list_horizontal > .slds-list__item > .comm-navigation__item > button.slds-is-active:not([data-type='home']) {
+.THIS .forceCommunityGlobalNavigation .slds-list_horizontal > .slds-list__item > .comm-navigation__item > button.slds-is-active:not([data-type="home"]) {
   background-color: transparent;
 }
 .THIS .uiTabset--base .tabs__item {

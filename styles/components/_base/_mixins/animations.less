@@ -1,0 +1,63 @@
+//@keyframes fadeIn {
+//    0% {
+//        z-index: 1;
+//
+//        opacity: 0;
+//    }
+//    1% {
+//        opacity: 0;
+//    }
+//    100% {
+//        z-index: 1; // both properties need to be here for animation-fill-mode to work!
+//
+//        opacity: 1;
+//    }
+//}
+//
+//@keyframes fadeOut {
+//    0% {
+//        z-index: 1;
+//
+//        opacity: 1;
+//    }
+//    99% {
+//        opacity: 0;
+//    }
+//    100% {
+//        z-index: -1;
+//
+//        opacity: 0;
+//    }
+//}
+
+.keyframes(@name, @rules) {
+  @-webkit-keyframes @name {
+    @rules();
+  }
+
+  @-moz-keyframes @name {
+    @rules();
+  }
+
+  @-ms-keyframes @name {
+    @rules();
+  }
+
+  @-o-keyframes @name {
+    @rules();
+  }
+
+  @keyframes @name {
+    @rules();
+  }
+}
+
+.hideShowMe(@duration) {
+  z-index: -1; // put behind all content initially
+
+  animation-duration: @duration;
+
+  opacity: 0; // and totally transparent
+
+  animation-fill-mode: forwards;
+}

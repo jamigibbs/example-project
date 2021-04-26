@@ -1,0 +1,54 @@
+.stencil() {
+  .stencils {
+    padding: @paddingSmall;
+
+    opacity: 0.5;
+    border: 1px solid @borderColor;
+    border-radius: @borderRadius;
+    .stencil {
+      width: 100%;
+
+      border-radius: @borderRadius;
+      background: @borderColor;
+
+      &:nth-child(2) {
+        opacity: 0.75;
+      }
+      &:nth-child(3) {
+        opacity: 0.5;
+      }
+      &:nth-child(n + 3) {
+        opacity: 0.25;
+      }
+
+      &.heading1 {
+        max-width: 500px;
+        height: @h1Size;
+        margin-bottom: @paddingSmall;
+      }
+
+      &.heading2 {
+        max-width: 300px;
+        height: @h2Size;
+        margin-bottom: @paddingSmall;
+      }
+
+      &.heading3 {
+        max-width: 300px;
+        height: @h3Size;
+        margin-bottom: @paddingSmall;
+      }
+
+      &.heading4 {
+        max-width: 200px;
+        height: @h4Size;
+        margin-bottom: @paddingSmall;
+      }
+
+      &.paragraph {
+        height: @smallSize;
+        margin-bottom: @paddingxSmall;
+      }
+    }
+  }
+}

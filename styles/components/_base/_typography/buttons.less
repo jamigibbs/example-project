@@ -1,0 +1,24 @@
+// ===================
+// Overrides to SLDS buttons (but still use branding editor!)
+// ===================
+.slds-button_brand,
+.slds-button_neutral,
+.slds-button_inverse {
+  .btn();
+}
+
+.slds-button_brand {
+  border: none;
+}
+
+.slds-button_inverse {
+  &:link,
+  &:visited {
+    color: @inverseTextColor;
+  }
+
+  &:hover,
+  &:active {
+    color: @inverseTextColor;
+  }
+}
