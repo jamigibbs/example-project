@@ -1,9 +1,11 @@
 <template>
-    {logo}
-    {logo2}
     <div class="slds-grid slds-grid_align-center">
         <div class="slds-col slds-size_3-of-6">
             <img src={logo} alt="logo" />
         </div>
     </div>
+
+    <p>Child header passed down: {headerTitle}</p>
+
+    <button onclick={handleChildButtonClick}>click me for event</button>
 </template>
